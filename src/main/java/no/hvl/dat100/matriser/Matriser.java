@@ -3,8 +3,8 @@ package no.hvl.dat100.matriser;
 public class Matriser {
 	
 	public static void main(String[] args) {
-		int[][] matrise = {{1,2,3}, {7,3,9}};
-		int[][] matrise3 = {{1,2,3}, {7,3,9}};
+		int[][] matrise = {{1,2,3}, {4,5,6},{7,8,9}};
+		int[][] matrise3 = {{1,2,3}, {7,3,9}, {6,3,9}};
 		skrivUt(matrise);
 		System.out.println(tilStreng(matrise));
 		int[][] matrise1 = skaler(5, matrise);
@@ -54,11 +54,11 @@ public class Matriser {
 
 	// d)
 	public static boolean erLik(int[][] a, int[][] b) {
-		boolean erlik = true;
+		boolean erlik = false;
 		for (int i = 0; i < a.length; i++) {
 			for (int j = 0; j < a[i].length; j++) {
-				if (a[i][j] != b[i][j]) {
-					erlik = false;
+				if (a[i][j] == b[i][j]) {
+					erlik = true;
 				}
 			}
 		}

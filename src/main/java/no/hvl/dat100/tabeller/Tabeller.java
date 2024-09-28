@@ -24,14 +24,18 @@ public class Tabeller {
 
 	// b)
 	public static String tilStreng(int[] tabell) {
-		String streng = "[";
-		for (int i = 0; i < tabell.length; i++) {
-			if (i == tabell.length - 1) {
-				streng = streng + tabell[i] + "]";
-			} else {
-				streng = streng + tabell[i] + ",";
+		String streng = null;
+		if (tabell.length > 0) {
+			streng = "[";
+			for (int i = 0; i < tabell.length; i++) {
+				if (i == tabell.length - 1) {
+					streng = streng + tabell[i];
+				} else {
+					streng = streng + tabell[i] + ",";
+				}
 			}
-		}
+			streng = streng + "]";
+		} else { streng = "[]"; }
 		return streng;
 	}
 
@@ -78,13 +82,10 @@ public class Tabeller {
 
 	// g)
 	public static boolean erSortert(int[] tabell) {
-		boolean sortert = false;
-		int lengde = tabell.length - 1;
-		for (int i = lengde; i > 0; i--) {
-			if (i > -1) {
-				if (tabell[i] > tabell[i-1]) {
-					sortert = true;
-				}
+		boolean sortert = true;
+		for (int i = 0; i < tabell.length - 1; i++) {
+			if (tabell[i] > tabell[i+1]) {
+				sortert = false;
 			}
 		}
 		return sortert;
