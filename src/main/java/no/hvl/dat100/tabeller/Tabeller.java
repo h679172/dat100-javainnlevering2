@@ -56,14 +56,13 @@ public class Tabeller {
 
 	// e)
 	public static int posisjonTall(int[] tabell, int tall) {
-		int posisjon = 0;
+		int posisjon = -1;
 		for (int i = 0; i < tabell.length; i++) {
 			if (tabell[i] == tall) {
-				posisjon = (i + 1);
-				return posisjon;
+				posisjon = i;
 			}
 		}
-		return -1;
+		return posisjon;
 	}
 
 	// f)
