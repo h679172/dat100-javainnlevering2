@@ -1,20 +1,6 @@
 package no.hvl.dat100.tabeller;
 
 public class Tabeller {
-	public static void main(String args[]) {
-		int[] tabell = {42,67,89};
-		skrivUt(tabell);
-		System.out.println(tilStreng(tabell));
-		System.out.println(finnesTall(tabell, 42));
-		System.out.println(posisjonTall(tabell, 42));
-		int[] tabell1 = reverser(tabell);
-		skrivUt(tabell1);
-		System.out.println(erSortert(tabell));
-		System.out.println(erSortert(tabell1));
-	
-		int[] nytabell = settSammen(tabell, tabell1);
-		skrivUt(nytabell);
-	}
 	// a)
 	public static void skrivUt(int[] tabell) {
 		for (int i = 0; i < tabell.length; i++) {

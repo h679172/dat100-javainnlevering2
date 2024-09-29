@@ -1,20 +1,6 @@
 package no.hvl.dat100.matriser;
 
 public class Matriser {
-	
-	public static void main(String[] args) {
-		int[][] matrise = {{1,2,3}, {4,5,6},{7,8,9}};
-		int[][] matrise3 = {{1,2,3}, {7,3,9}, {6,3,9}};
-		skrivUt(matrise);
-		System.out.println(tilStreng(matrise));
-		int[][] matrise1 = skaler(5, matrise);
-		skrivUt(matrise1);
-		System.out.println(erLik(matrise, matrise3));
-		skrivUt(multipliser(matrise, matrise3));
-		skrivUt(matrise);
-		System.out.println("speile:");
-		skrivUt(speile(matrise));
-	}
 	// a)
 	public static void skrivUt(int[][] matrise) {
 		for (int i = 0; i < matrise.length; i++) {
@@ -77,12 +63,19 @@ public class Matriser {
 
 	// f)
 	public static int[][] multipliser(int[][] a, int[][] b) {
-		int[][] multiplisert = new int[a.length][a.length];
-		for (int i = 0; i < multiplisert.length; i++) {
-			for (int j = 0; j < multiplisert[i].length; j++) {
-				multiplisert[i][j] = (a[i][j] * b[i][j]);
+	int[][] result = new int[a.length][b[0].length];
+	for (int row = 0; row < result.length; row++) {
+		for (int col = 0; col < result[row].length; col++) {
+			result[row][col] = multiplyMatricesCell(a, b, row, col);
 			}
 		}
-		return multiplisert;
+		return result;
+	}
+	public static int multiplyMatricesCell(int[][] firstMatrix, int[][] secondMatrix, int row, int col) {
+		int cell = 0;
+		for (int i = 0; i < secondMatrix.length; i++) {
+			cell += firstMatrix[row][i] * secondMatrix[i][col];
+		}
+		return cell;
 	}
 }
