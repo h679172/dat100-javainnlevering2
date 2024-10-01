@@ -64,18 +64,18 @@ public class Matriser {
 	// f)
 	public static int[][] multipliser(int[][] a, int[][] b) {
 	int[][] result = new int[a.length][b[0].length];
-	for (int row = 0; row < result.length; row++) {
-		for (int col = 0; col < result[row].length; col++) {
-			result[row][col] = multiplyMatricesCell(a, b, row, col);
+	for (int i = 0; i < result.length; i++) {
+		for (int j = 0; j < result[i].length; j++) {
+			result[i][j] = gangMatriseCelle(a, b, i, j);
 			}
 		}
 		return result;
 	}
-	public static int multiplyMatricesCell(int[][] firstMatrix, int[][] secondMatrix, int row, int col) {
-		int cell = 0;
-		for (int i = 0; i < secondMatrix.length; i++) {
-			cell += firstMatrix[row][i] * secondMatrix[i][col];
+	public static int gangMatriseCelle(int[][] a, int[][] b, int rad, int kol) {
+		int celle = 0;
+		for (int i = 0; i < b.length; i++) {
+			celle += a[rad][i] * b[i][kol];
 		}
-		return cell;
+		return celle;
 	}
 }
