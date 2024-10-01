@@ -66,7 +66,7 @@ public class Matriser {
 	int[][] result = new int[a.length][b[0].length];
 	for (int i = 0; i < result.length; i++) {
 		for (int j = 0; j < result[i].length; j++) {
-			result[i][j] = gangMatriseCelle(a, b, i, j);
+				result[i][j] = gangMatriseCelle(a, b, i, j);
 			}
 		}
 		return result;
